@@ -1,3 +1,4 @@
+const cors = require("cors");
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -20,6 +21,12 @@ const limiter = rateLimit({
     });
   }
 });
+
+app.use(cors({
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST"],
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(helmet());
