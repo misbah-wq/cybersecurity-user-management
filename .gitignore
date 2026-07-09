@@ -31,3 +31,5 @@ backend/security.log
 # Environment variables
 .env
 backend/.env
+
+sqli-lab/node_modules/
