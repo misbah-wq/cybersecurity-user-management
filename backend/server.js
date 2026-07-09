@@ -1,13 +1,47 @@
+const cookieParser = require("cookie-parser");
+const csrf = require("csurf");
+const cors = require("cors");
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
 const winston = require("winston");
 
 const app = express();
 
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+  handler: (req, res) => {
+    console.log("Rate limit exceeded!");
+    res.status(429).json({
+      error: "Too many requests. Please try again later."
+    });
+  }
+});
+
+app.use(cors({
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST"],
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(helmet());
+app.use(limiter);
+app.use(cookieParser());
+
+const csrfProtection = csrf({
+  cookie: true
+});
+app.use((req, res, next) => {
+  console.log(`Request: ${req.method} ${req.url}`);
+  next();
+});
 
 const logger = winston.createLogger({
   transports: [
@@ -22,7 +56,13 @@ app.get("/", (req, res) => {
   res.send("Backend Running Successfully");
 });
 
-app.post("/signup", async (req, res) => {
+app.get("/csrf-token", csrfProtection, (req, res) => {
+  res.json({
+    csrfToken: req.csrfToken()
+  });
+});
+
+app.post("/signup", csrfProtection, async (req, res) => {
 
   const { email, password } = req.body;
 
