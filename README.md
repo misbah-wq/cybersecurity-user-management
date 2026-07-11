@@ -93,14 +93,14 @@ A secure User Management System developed using **React**, **Node.js**, and **Ex
 
 ## Security Enhancements
 
-### Week 4 – Security Hardening
+ – Security Hardening
 
 - Implemented Helmet middleware
 - Configured Express Rate Limiter
 - Configured CORS
 - Added backend security improvements
 
-### Week 5 – Ethical Hacking & Security
+ – Ethical Hacking & Security
 
 - Conducted reconnaissance on the application
 - Performed SQL Injection testing using SQLMap
@@ -110,7 +110,7 @@ A secure User Management System developed using **React**, **Node.js**, and **Ex
 - Tested API endpoints using Postman
 - Added security logging using Winston
 
-### Week 6 – Security Audit
+ – Security Audit
 
 - Performed OWASP ZAP security assessment
 - Reviewed application security configuration
@@ -152,7 +152,7 @@ A secure User Management System developed using **React**, **Node.js**, and **Ex
 - SQLMap
 - OWASP ZAP
 - Postman
-
+- Brupsuite
 ---
 
 ## Project Structure
