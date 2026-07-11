@@ -68,3 +68,168 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# Cybersecurity User Management System
+
+A secure User Management System developed using **React**, **Node.js**, and **Express.js**. This project demonstrates secure authentication, API protection, and web application security practices based on OWASP recommendations.
+
+---
+
+## Features
+
+- User Registration
+- User Login
+- Email Validation
+- Password Hashing using bcrypt
+- JWT Authentication
+- Security Headers using Helmet
+- API Rate Limiting
+- Cross-Origin Resource Sharing (CORS)
+- CSRF Protection
+- Security Logging using Winston
+
+---
+
+## Security Enhancements
+
+### Week 4 – Security Hardening
+
+- Implemented Helmet middleware
+- Configured Express Rate Limiter
+- Configured CORS
+- Added backend security improvements
+
+### Week 5 – Ethical Hacking & Security
+
+- Conducted reconnaissance on the application
+- Performed SQL Injection testing using SQLMap
+- Created a SQL Injection testing lab
+- Prevented SQL Injection using Prepared Statements
+- Implemented CSRF Protection using csurf
+- Tested API endpoints using Postman
+- Added security logging using Winston
+
+### Week 6 – Security Audit
+
+- Performed OWASP ZAP security assessment
+- Reviewed application security configuration
+- Documented implemented security controls
+
+---
+
+## Technologies Used
+
+### Frontend
+
+- React.js
+- HTML
+- CSS
+- JavaScript
+
+### Backend
+
+- Node.js
+- Express.js
+
+### Database
+
+- SQLite (SQL Injection Lab)
+
+### Security
+
+- bcrypt
+- jsonwebtoken
+- helmet
+- express-rate-limit
+- cors
+- csurf
+- cookie-parser
+- winston
+
+### Security Testing Tools
+
+- SQLMap
+- OWASP ZAP
+- Postman
+
+---
+
+## Project Structure
+
+```
+cybersecurity-user-management-app
+│
+├── backend/
+│   ├── server.js
+│   ├── package.json
+│
+├── sqli-lab/
+│   ├── server.js
+│   ├── users.db
+│
+├── src/
+├── public/
+└── README.md
+```
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/misbah-wq/cybersecurity-user-management.git
+```
+
+Install frontend dependencies:
+
+```bash
+npm install
+```
+
+Install backend dependencies:
+
+```bash
+cd backend
+npm install
+```
+
+Start the backend server:
+
+```bash
+npm start
+```
+
+Start the React application:
+
+```bash
+cd ..
+npm start
+```
+
+---
+
+## Security Testing
+
+The project includes practical security testing using:
+
+- SQLMap
+- OWASP ZAP
+- Postman
+
+Security improvements include:
+
+- SQL Injection Prevention
+- CSRF Protection
+- Password Hashing
+- JWT Authentication
+- Security Headers
+- API Rate Limiting
+
+
+
+## Author
+
+Misbah Mughal
